@@ -1,7 +1,10 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.adf91f2e.css",
-    "main.js": "/product_catalog/static/js/main.9e3d79cc.js",
+    "main.css": "/product_catalog/static/css/main.c2bf2a59.css",
+    "main.js": "/product_catalog/static/js/main.58428e4b.js",
+    "static/media/category-tablets.png": "/product_catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
+    "static/media/category-phones.png": "/product_catalog/static/media/category-phones.af93d992917380dfe206.png",
+    "static/media/category-accessories.png": "/product_catalog/static/media/category-accessories.e47d6d6df68a6548e82b.png",
     "static/media/Mont-Regular.otf": "/product_catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product_catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/product_catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
@@ -11,11 +14,11 @@
     "static/media/icon-chevron-arrow-right--secondary-grey.svg": "/product_catalog/static/media/icon-chevron-arrow-right--secondary-grey.83991c7d33b8e1cfe733.svg",
     "index.html": "/product_catalog/index.html",
     "static/media/index.tsx": "/product_catalog/static/media/index.24018cc3ec58d89d60b0.tsx",
-    "main.adf91f2e.css.map": "/product_catalog/static/css/main.adf91f2e.css.map",
-    "main.9e3d79cc.js.map": "/product_catalog/static/js/main.9e3d79cc.js.map"
+    "main.c2bf2a59.css.map": "/product_catalog/static/css/main.c2bf2a59.css.map",
+    "main.58428e4b.js.map": "/product_catalog/static/js/main.58428e4b.js.map"
   },
   "entrypoints": [
-    "static/css/main.adf91f2e.css",
-    "static/js/main.9e3d79cc.js"
+    "static/css/main.c2bf2a59.css",
+    "static/js/main.58428e4b.js"
   ]
 }
