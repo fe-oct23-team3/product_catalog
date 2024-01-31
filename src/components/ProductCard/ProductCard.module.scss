@@ -91,6 +91,10 @@ input {
     font-size: 22px;
     color: $primary-color;
     font-weight: 800;
+
+    &::before {
+      content: '$';
+    }
   }
 
   &__old_price {
@@ -101,6 +105,10 @@ input {
     font-size: 22px;
     font-weight: 300;
     margin-left: 8px;
+
+    &::before {
+      content: '$';
+    }
   }
 
   &__price_wrapper {
