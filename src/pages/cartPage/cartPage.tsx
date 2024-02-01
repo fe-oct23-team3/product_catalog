@@ -1,35 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import styles from './cartPage.module.scss';
 import { CartItem } from '../../components/CartItem/CartItem';
 import { BackLink } from '../../components/BackLink/BackLink';
 import { ProductsContext } from '../../context/ProductsContext';
-// import { Product } from '../../types/Product';
-
-// const productsFromServer = [
-//   {
-//     id: 1,
-//     name: 'Apple iPhone 14 Pro 128GB Silver (MQ023)',
-//     price: 999,
-//     quantity: 1,
-//     image: 'https://dummyimage.com/66x66/000/fff&text=PRODUCT',
-//   },
-//   {
-//     id: 2,
-//     name: 'Apple iPhone 14 Plus 128GB PRODUCT Red (MQ513)',
-//     price: 859,
-//     quantity: 2,
-//     image: 'https://dummyimage.com/66x66/000/fff&text=PRODUCT',
-//   },
-//   {
-//     id: 3,
-//     name: 'Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)',
-//     price: 799,
-//     quantity: 1,
-//     image: 'https://dummyimage.com/66x66/000/fff&text=PRODUCT',
-//   },
-// ];
 
 export const CartPage: React.FC = () => {
   const { cartProducts, removeCartProduct } = useContext(ProductsContext);
@@ -41,8 +15,6 @@ export const CartPage: React.FC = () => {
 
   const [products, setProducts] = useState(productsWithQuantity);
   const navigate = useNavigate();
-  // console.log(cartProducts);
-  // let isCheckoutLoading = false;
   const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
 
   const totalPrice = products.reduce((acc, product) => acc
