@@ -71,7 +71,7 @@ export const ProductsSlider: React.FC<Props> = React.memo(
             )
             : products.map(product => (
               <SwiperSlide key={product.itemId} className={styles.swiper_slide}>
-                <ProductCard product={product} simpleHoverEffect />
+                <ProductCard product={product} />
               </SwiperSlide>
             ))}
         </Swiper>

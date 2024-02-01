@@ -1,13 +1,15 @@
-import cn from 'classnames';
 import { Link } from 'react-router-dom';
+
 import style from './ProductCard.module.scss';
 import { Product } from '../../types/Product';
 import { useContextProvider } from '../../context/ProductsContext';
 import { scrollToTop } from '../../utils/scrollToTop';
 
+import { Button } from '../Button';
+import { LikeButton } from '../LikeButton/LikeButton';
+
 interface Props {
   product: Product,
-  simpleHoverEffect?: boolean,
 }
 
 const ADDED = 'Added';
@@ -18,7 +20,7 @@ const containsProduct = (products: Product[], productId: number): boolean => {
 };
 
 export const ProductCard: React.FC<Props> = (props) => {
-  const { product, simpleHoverEffect = false } = props;
+  const { product } = props;
 
   const {
     id,
@@ -45,12 +47,7 @@ export const ProductCard: React.FC<Props> = (props) => {
   const isInCart = containsProduct(cartProducts, id);
 
   return (
-    <div className={cn(style.card,
-      {
-        [style.card__simple_hover]: simpleHoverEffect,
-        [style.card__default_hover]: !simpleHoverEffect,
-      })}
-    >
+    <div className={style.card}>
       <Link to={`/${category}/${itemId}`} onClick={scrollToTop}>
         <div className={style.card__image_wrapper}>
           <img
@@ -100,26 +97,18 @@ export const ProductCard: React.FC<Props> = (props) => {
       </div>
 
       <div className={style.card__buttons_wrapper}>
-        <button
-          type="button"
+        <Button
+          text={isInCart ? ADDED : NOT_ADDED}
           onClick={() => toogleSelectCart(product)}
-          className={cn(style.card__button_add, {
-            [style.card__button_add_done]: isInCart,
-          })}
-        >
-          {isInCart ? ADDED : NOT_ADDED}
-        </button>
+          width={160}
+          isSelected={isInCart}
+        />
 
-        <label className={style.card__checkbox_favorite}>
-          <input
-            onChange={() => toogleSelectFavorite(product)}
-            className={cn(style.card__checkbox, {
-              [style.card__checkbox_selected]: isInFavorites,
-            })}
-            type="checkbox"
-            checked={isInFavorites}
-          />
-        </label>
+        <LikeButton
+          isSelected={isInFavorites}
+          onClick={() => toogleSelectFavorite(product)}
+          size={40}
+        />
       </div>
     </div>
   );

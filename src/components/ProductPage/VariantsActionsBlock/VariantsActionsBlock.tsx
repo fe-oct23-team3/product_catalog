@@ -7,6 +7,7 @@ import { Button } from '../../Button';
 import { Product, ProductDetails } from '../../../types/Product';
 import { useContextProvider } from '../../../context/ProductsContext';
 import { allColors } from './allColors';
+import { LikeButton } from '../../LikeButton';
 
 interface Props {
   productData: ProductDetails;
@@ -98,20 +99,17 @@ export const VariantsActionsBlock: React.FC<Props> = ({
               return (
                 <button
                   key={colorKey}
-                  className={`${styles.button} ${
-                    selectedColor === colorKey ? styles.selected : ''
-                  }`}
+                  className={cn(
+                    styles.button,
+                    { [styles.selected]: selectedColor === colorKey },
+                  )}
                   style={{ backgroundColor: buttonColor }}
-                  aria-label={`${
-                    colorKey.charAt(0).toUpperCase() + colorKey.slice(1)
-                  } color`}
+                  aria-label={`${colorKey.charAt(0).toUpperCase() + colorKey.slice(1)} color`}
                   onClick={() => handleColorClick(colorKey)}
                   disabled={colorKey === productData.color}
                 >
                   <span className={styles.visuallyHidden}>
-                    {`${
-                      colorKey.charAt(0).toUpperCase() + colorKey.slice(1)
-                    } color`}
+                    {`${colorKey.charAt(0).toUpperCase() + colorKey.slice(1)} color`}
                   </span>
                 </button>
               );
@@ -122,9 +120,7 @@ export const VariantsActionsBlock: React.FC<Props> = ({
           <h3 className={styles.headCapacity}>Select capacity</h3>
           {capacities.map((cap) => (
             <button
-              className={`${styles.capacityButton} ${
-                currentCapacity === cap ? styles.selectedCapacity : ''
-              }`}
+              className={`${styles.capacityButton} ${currentCapacity === cap ? styles.selectedCapacity : ''}`}
               key={cap}
               onClick={() => handleCapacityClick(cap)}
             >
@@ -154,16 +150,11 @@ export const VariantsActionsBlock: React.FC<Props> = ({
               height={48}
             />
 
-            <label className={styles.checkbox__favorite}>
-              <input
-                onChange={() => toogleSelectFavorite(cardProduct)}
-                className={cn(styles.checkbox, {
-                  [styles.checkbox__selected]: isInFavorites,
-                })}
-                type="checkbox"
-                checked={isInFavorites}
-              />
-            </label>
+            <LikeButton
+              isSelected={isInFavorites}
+              onClick={() => toogleSelectFavorite(cardProduct)}
+              size={48}
+            />
           </div>
         </div>
 

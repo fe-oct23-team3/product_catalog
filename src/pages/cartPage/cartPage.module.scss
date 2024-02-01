@@ -1,7 +1,4 @@
-@import '../../mixins/typography';
-@import '../../mixins/mixinLayout';
-@import '../../mixins/grid';
-@import '../../variables.scss/colors.scss';
+@import './../../styles';
 
 .title {
   @include typographyH1;
@@ -62,7 +59,7 @@
     &Info {
       position: relative;
 
-      @include typograhyBodyText;
+      @include typographyBodyText;
       color: $secondary-color;
     }
 
@@ -76,32 +73,10 @@
       margin-top: 16px;
     }
   }
-
-
-
-  &Button {
-    display: flex;
-    height: 48px;
-    margin-top: 16px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-
-    background-color: $primary-color;
-    color: $gray-white;
-    cursor: pointer;
-
-    @include typograhyBodyText;
-
-    &:disabled {
-      background-color: $elements-color;
-      cursor: not-allowed;
-    }
-  }
 }
 
 .emptyTitle {
-  @include typograhyH3;
+  @include typographyH3;
 }
 
 .loader {

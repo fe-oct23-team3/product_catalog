@@ -1,6 +1,8 @@
 @import './../../styles';
 
 .product_page {
+  color: $primary-color;
+
   @include pageGrid;
   &_title {
     @include typographyH2;
@@ -59,11 +61,7 @@
 
   &__location_page_name {
     color: $secondary-color;
-    font-family: "Mont";
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 12px;
-    margin-top: 3px;
+    @include typographySmallText;
   }
 }
 
@@ -152,7 +150,6 @@
 
 
 .about {
-  font-family: Mont;
   margin-bottom: 56px;
 
   @include onTablet {
@@ -167,23 +164,17 @@
   &_header {
     border-bottom: 1px solid rgb(230, 227, 223);
     margin-bottom: 32px;
-    font-weight: 800;
+    @include typographyH3;
   }
 
   &_name {
     margin-bottom: 16px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    @include typographyH4;
   }
 
   &_value {
-    color: #89939A;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
+    color: $secondary-color;
+    @include typographyBodyText;
   }
 
   &_section:not(:last-child) {
@@ -192,7 +183,6 @@
 }
 
 .tech {
-  font-family: Mont;
   margin-bottom: 56px;
 
   @include onTablet {
@@ -204,23 +194,18 @@
   }
 
   &_name {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 21px;
-    color: #89939A;
+    color: $secondary-color;
+    @include typographyBodyText;
   }
 
   &_value {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 21px;
+    @include typographyBodyText;
   }
 
   &_header {
     border-bottom: 1px solid rgb(230, 227, 223);
     margin-bottom: 25px;
+    @include typographyH3;
   }
 
   &_section {

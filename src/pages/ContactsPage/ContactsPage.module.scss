@@ -26,11 +26,11 @@
   }
   &__name {
     @include typographyH4;
-    color: $primary-color
+    color: $primary-color;
+    margin-bottom: 10px
   }
    &__description {
     @include typographyBodyText;
-    text-align: justify;
     color: $secondary-color;
    }
   &__item {

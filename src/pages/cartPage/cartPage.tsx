@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import styles from './cartPage.module.scss';
-import { CartItem } from '../../components/CartItem/CartItem';
-import { BackLink } from '../../components/BackLink/BackLink';
+
+import { CartItem, BackLink, Button } from '../../components';
 import { ProductsContext } from '../../context/ProductsContext';
 
 export const CartPage: React.FC = () => {
@@ -119,14 +120,13 @@ export const CartPage: React.FC = () => {
               {`Total for ${totalProducts} items`}
             </p>
           </div>
-          <button
-            className={styles.totalPriceButton}
-            type="button"
-            disabled={products.length === 0}
+
+          <Button
             onClick={goCheckout}
-          >
-            Checkout
-          </button>
+            text="Checkout"
+            isDisabled={products.length === 0}
+            height={48}
+          />
         </div>
       </div>
     </>

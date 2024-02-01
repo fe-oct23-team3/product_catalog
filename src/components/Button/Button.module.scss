@@ -9,6 +9,7 @@
   color: $gray-white;
 
   @include hover(box-shadow, 0px 3px 13px 0px #17203133);
+  @include hover(border-radius, 8px);
 
   &--selected {
     color: $selected-button;

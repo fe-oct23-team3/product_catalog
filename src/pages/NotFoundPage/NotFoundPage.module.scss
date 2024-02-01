@@ -77,7 +77,7 @@ $button-hover-sh-color: #17203166;
 .text-gray-600 {
   color: $secondary-color;
   @include typographyH4;
-  margin-block: 20px;
+  margin-block: 20px 40px;
 }
 
 .button {
