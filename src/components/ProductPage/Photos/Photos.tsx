@@ -36,7 +36,6 @@ export const Photos: React.FC<Props> = ({ photosData }) => {
     <div className={swiperStyles.photosSwiperContainer}>
       <div className={swiperStyles.photosMainGrid}>
         <Swiper
-          onSwiper={(swiper: SwiperClass) => setActiveIndex(swiper.realIndex)}
           loop
           spaceBetween={0}
           modules={[Navigation, Thumbs]}
@@ -44,6 +43,9 @@ export const Photos: React.FC<Props> = ({ photosData }) => {
           thumbs={{ swiper: activeTumb }}
           className={swiperStyles.photosMainProductsSlider}
           data-swiper-id="swiper-1"
+          onSlideChange={
+            (swiper: SwiperClass) => setActiveIndex(swiper.realIndex)
+          }
         >
           {photosData.map((item) => (
             <SwiperSlide
