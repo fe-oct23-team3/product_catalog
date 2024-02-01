@@ -10,7 +10,7 @@ export const useCatalogParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = searchParams.get('page') || '1';
   const limit = searchParams.get('limit') || '';
-  const order = searchParams.get('order') || 'price';
+  const order = searchParams.get('order') || 'year';
   const direction = searchParams.get('direction') || 'DESC';
   const { pathname } = useLocation();
   const catalogPath = pathname.split('/')[1];

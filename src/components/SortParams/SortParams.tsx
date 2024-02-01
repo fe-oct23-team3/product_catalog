@@ -29,9 +29,9 @@ const optionsPageLimit: OptionLimit[] = [
 ];
 
 const optionsSortParams:Option[] = [
+  { value: { order: 'year', direction: 'desc' }, label: 'Newest' },
   { value: { order: 'price', direction: 'desc' }, label: 'Price: High to low' },
   { value: { order: 'price', direction: 'asc' }, label: 'Price: Low to High' },
-  { value: { order: 'year', direction: 'desc' }, label: 'Newest' },
   { value: { order: 'year', direction: 'asc' }, label: 'Old(but fashion)' },
 
 ];
@@ -109,6 +109,7 @@ export const SortParams: FC<Props> = (props) => {
           isLoading={isLoadingSort}
           className={styles['react-select-container']}
           isDisabled={isLoadingSort}
+          isSearchable={false}
         />
       </div>
       <div className={styles['catalog__sort--limit']}>
@@ -121,6 +122,7 @@ export const SortParams: FC<Props> = (props) => {
           isLoading={isLoadingLimit}
           className={styles['react-select-container']}
           isDisabled={isLoadingLimit}
+          isSearchable={false}
         />
       </div>
     </div>
