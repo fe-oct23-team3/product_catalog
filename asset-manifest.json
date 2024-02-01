@@ -1,21 +1,18 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.f1ac4591.css",
-    "main.js": "/product_catalog/static/js/main.f0b9456a.js",
-    "static/media/category-tablets.png": "/product_catalog/static/media/category-tablets.51782e18205a1ca01ce8.png",
-    "static/media/category-phones.png": "/product_catalog/static/media/category-phones.af93d992917380dfe206.png",
-    "static/media/category-accessories.png": "/product_catalog/static/media/category-accessories.e47d6d6df68a6548e82b.png",
+    "main.css": "/product_catalog/static/css/main.e497be58.css",
+    "main.js": "/product_catalog/static/js/main.d2195f50.js",
     "static/media/Mont-Regular.otf": "/product_catalog/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
     "static/media/Mont-SemiBold.otf": "/product_catalog/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/product_catalog/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
     "static/media/icon-home.svg": "/product_catalog/static/media/icon-home.825c582822d49463084d.svg",
     "static/media/icon-chevron-arrow-right--secondary-grey.svg": "/product_catalog/static/media/icon-chevron-arrow-right--secondary-grey.83991c7d33b8e1cfe733.svg",
     "index.html": "/product_catalog/index.html",
-    "main.f1ac4591.css.map": "/product_catalog/static/css/main.f1ac4591.css.map",
-    "main.f0b9456a.js.map": "/product_catalog/static/js/main.f0b9456a.js.map"
+    "main.e497be58.css.map": "/product_catalog/static/css/main.e497be58.css.map",
+    "main.d2195f50.js.map": "/product_catalog/static/js/main.d2195f50.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1ac4591.css",
-    "static/js/main.f0b9456a.js"
+    "static/css/main.e497be58.css",
+    "static/js/main.d2195f50.js"
   ]
 }
