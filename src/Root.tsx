@@ -10,6 +10,8 @@ import { ProductsContextProvider } from './context/ProductsContext';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ProductPage } from './pages/productPage/productPage';
 import { CheckoutPage } from './pages/checkoutPage/checkoutPage';
+import { ContactPage } from './pages/ContactsPage/ContactsPage';
+import { RightsPage } from './pages/RightsPage/RightsPage';
 
 export const Root = () => (
   <ProductsContextProvider>
@@ -37,6 +39,8 @@ export const Root = () => (
           <Route path="cart" element={<CartPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="contacts" element={<ContactPage />} />
+          <Route path="/rights" element={<RightsPage />} />
         </Route>
       </Routes>
     </Router>
