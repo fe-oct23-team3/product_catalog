@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { About } from '../../components/ProductPage/About';
@@ -11,6 +11,7 @@ import styles from './productPage.module.scss';
 import { getProduct, getRecommendedProducts } from '../../api/products';
 import { DataFromServer, Product, ProductDetails } from '../../types/Product';
 import { ProductsSlider, BackLink } from '../../components';
+import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
 
 const getAllProducts = async (): Promise<DataFromServer> => {
   const product = await axios.get(
@@ -66,10 +67,9 @@ export const ProductPage = () => {
   if (productData && cardProduct) {
     return (
       <div className={styles.product_page}>
-        <div
-          className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}
-        >
-          <label htmlFor="home_link">
+        <div className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}>
+          <Breadcrumbs />
+          {/* <label htmlFor="home_link">
             <Link
               id="home_link"
               className={styles.product_page__icon_home}
@@ -86,7 +86,7 @@ export const ProductPage = () => {
           <div className={styles.product_page__icon_right_arrow} />
           <p className={styles.product_page__location_page_name}>
             {`${productData?.id}`}
-          </p>
+          </p> */}
         </div>
         <div style={{ marginTop: '-40px' }} className={`${styles.fw}`}>
           <BackLink link=".." />

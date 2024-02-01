@@ -1,0 +1,63 @@
+@import './../../styles';
+
+.contacts {
+  list-style: none;
+  padding-top: 25px;
+  &__header {
+    @include typographyH2;
+    margin-bottom: 25px;
+    color: $primary-color
+  }
+  &__container {
+    display: grid;
+    row-gap: 40px;
+    column-gap: 16px;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr) 
+    }
+    @include onDesktop {
+      grid-template-columns: repeat(3, 1fr)
+    }
+  }
+  &__name {
+    @include typographyH4;
+    color: $primary-color
+  }
+   &__description {
+    @include typographyBodyText;
+    text-align: justify;
+    color: $secondary-color;
+   }
+  &__item {
+    margin-bottom: 16px;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+
+  }
+  .contacts__link {
+    display: flex;
+    gap: 8px;
+
+    &--item {
+      width: 32px;
+      height: 32px;
+      @include hover(scale, 1.07)
+    }
+  }
+
+  &__hire-us {
+    display: flex;
+    justify-content: center;
+    &--message {
+      @include typographyH2;
+      color: $secondary-color;
+    }
+  }
+}

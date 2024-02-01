@@ -1,0 +1,14 @@
+@import '../../styles';
+.rights {
+  padding-top: 25px;
+  max-width: 640px;
+  &__label {
+    @include typographyBodyText;
+    color: $primary-color
+  }
+  &__rules {
+    @include typographyBodyText;
+    color: $secondary-color;
+    text-align: justify;
+  }
+}
