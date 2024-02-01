@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+
 import style from './ProductCard.module.scss';
 import { Product } from '../../types/Product';
 import { useContextProvider } from '../../context/ProductsContext';
 import { scrollToTop } from '../../utils/scrollToTop';
+
 import { Button } from '../Button';
 import { LikeButton } from '../LikeButton/LikeButton';
 
