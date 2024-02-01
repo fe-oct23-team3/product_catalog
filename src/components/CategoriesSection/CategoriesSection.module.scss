@@ -9,6 +9,8 @@ a {
 }
 
 .category {
+  color: $primary-color;
+
   &__container {
     margin: 0 auto;
     margin-bottom: 24px;
@@ -78,11 +80,8 @@ a {
 
     &__category {
       margin-bottom: 31px;
-      font-family: Mont;
-      font-size: 14px;
+      @include typographyBodyText;
       color: $secondary-color;
-      line-height: 21px;
-      text-align: left;
     }
   }
 }
