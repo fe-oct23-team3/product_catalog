@@ -108,7 +108,7 @@ export const CartPage: React.FC = () => {
           {isCheckoutLoading
             && (
               <div className={styles.loader}>
-                <img src="img/loading-spinner.gif" alt="Product is loading" />
+                <div className={styles.loader__content} />
               </div>
             )}
           <div className={styles.totalPriceTextWrapper}>
@@ -123,8 +123,8 @@ export const CartPage: React.FC = () => {
 
           <Button
             onClick={goCheckout}
-            text="Checkout"
-            isDisabled={products.length === 0}
+            text={isCheckoutLoading ? '' : 'Checkout'}
+            isDisabled={products.length === 0 || isCheckoutLoading}
             height={48}
           />
         </div>

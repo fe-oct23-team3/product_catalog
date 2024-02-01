@@ -12,6 +12,7 @@ import { getProduct, getRecommendedProducts } from '../../api/products';
 import { DataFromServer, Product, ProductDetails } from '../../types/Product';
 import { ProductsSlider, BackLink } from '../../components';
 import { Breadcrumbs } from '../../components/Breadcrumbs/Breadcrumbs';
+import { Loader } from '../../components/CatalogPage/Loader/Loader';
 
 const getAllProducts = async (): Promise<DataFromServer> => {
   const product = await axios.get(
@@ -57,104 +58,56 @@ export const ProductPage = () => {
         .then((data) => {
           setRecommended(data.rows);
         })
-        .catch(() => {})
+        .catch(() => { })
         .finally(() => setAreRecommendedLoading(false));
     }
 
     fetchData();
   }, [productId]);
 
-  if (productData && cardProduct) {
-    return (
-      <div className={styles.product_page}>
-        <div className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}>
-          <Breadcrumbs />
-          {/* <label htmlFor="home_link">
-            <Link
-              id="home_link"
-              className={styles.product_page__icon_home}
-              to="/"
-              aria-label="go home icon"
-            />
-          </label>
-          <div className={styles.product_page__icon_right_arrow} />
-          <Link id="home_link" to={`/${cardProduct?.category}`}>
-            <p className={styles.product_page__location_page_name}>
-              {`${cardProduct?.category}`}
-            </p>
-          </Link>
-          <div className={styles.product_page__icon_right_arrow} />
-          <p className={styles.product_page__location_page_name}>
-            {`${productData?.id}`}
-          </p> */}
-        </div>
-        <div style={{ marginTop: '-40px' }} className={`${styles.fw}`}>
-          <BackLink link=".." />
-        </div>
-        <h1 className={`${styles.fw} ${styles.product_page_title}`}>
-          {productData?.name}
-        </h1>
-
-        <div className={`${styles.hw_l} ${styles.photosContainer}`}>
-          {productData && <Photos photosData={productData?.images} />}
-        </div>
-
-        <div className={`${styles.hw_r}`}>
-          {productData && cardProduct && (
-            <VariantsActionsBlock
-              productData={productData}
-              cardProduct={cardProduct}
-            />
-          )}
-        </div>
-
-        {productData && <About productData={productData} />}
-
-        {productData && <TechSpecs productData={productData} />}
-
-        <div className={styles.recommended}>
-          <ProductsSlider
-            products={recommended}
-            areLoading={areRecommendedLoading}
-          >
-            You may also like
-          </ProductsSlider>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={styles.product_page}>
-      <h1 className={`${styles.fw} ${styles.product_page_title}`}>
-        {productData?.name}
-      </h1>
+    <>
+      {productData && cardProduct
+        ? (
+          <div className={styles.product_page}>
+            <div className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}>
+              <Breadcrumbs />
+            </div>
+            <div style={{ marginTop: '-40px' }} className={`${styles.fw}`}>
+              <BackLink link=".." />
+            </div>
+            <h1 className={`${styles.fw} ${styles.product_page_title}`}>
+              {productData?.name}
+            </h1>
 
-      <div className={`${styles.hw_l} ${styles.photosContainer}`}>
-        {productData && <Photos photosData={productData?.images} />}
-      </div>
+            <div className={`${styles.hw_l} ${styles.photosContainer}`}>
+              {productData && <Photos photosData={productData?.images} />}
+            </div>
 
-      <div className={`${styles.hw_r}`}>
-        {productData && cardProduct && (
-          <VariantsActionsBlock
-            productData={productData}
-            cardProduct={cardProduct}
-          />
-        )}
-      </div>
+            <div className={`${styles.hw_r}`}>
+              {productData && cardProduct && (
+                <VariantsActionsBlock
+                  productData={productData}
+                  cardProduct={cardProduct}
+                />
+              )}
+            </div>
 
-      {productData && <About productData={productData} />}
+            {productData && <About productData={productData} />}
 
-      {productData && <TechSpecs productData={productData} />}
+            {productData && <TechSpecs productData={productData} />}
 
-      <div className={styles.recommended}>
-        <ProductsSlider
-          products={recommended}
-          areLoading={areRecommendedLoading}
-        >
-          You may also like
-        </ProductsSlider>
-      </div>
-    </div>
+            <div className={styles.recommended}>
+              <ProductsSlider
+                products={recommended}
+                areLoading={areRecommendedLoading}
+              >
+                You may also like
+              </ProductsSlider>
+            </div>
+          </div>
+        )
+        : <Loader />}
+    </>
   );
 };
