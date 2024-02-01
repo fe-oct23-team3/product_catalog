@@ -1,5 +1,5 @@
-import { ProductDetails } from '../../../../types/Product';
-import styles from '../../productPage.module.scss';
+import { ProductDetails } from '../../../types/Product';
+import styles from '../../../pages/productPage/productPage.module.scss';
 
 interface Props {
   productData: ProductDetails;

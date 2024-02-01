@@ -1,4 +1,4 @@
-@import './../../../../styles';
+@import '../../../styles/';
 
 .productDetails {
   display: grid;
@@ -145,6 +145,7 @@
   border: 2px solid $gray-white;
   cursor: pointer;
   transition: box-shadow 0.3s;
+  user-select: none;
 
   &:hover {
     box-shadow: 0 0 0 2px $icons-placeholders;
@@ -194,7 +195,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-image: url(../../../../components/Icon/icons/icon-heart.svg);
+  background-image: url(../../Icon/icons/icon-heart.svg);
 
   &__favorite {
     display: flex;
@@ -214,6 +215,6 @@
   }
 
   &__selected {
-    background-image: url(../../../../components/Icon/icons/icon-heart-red.svg);
+    background-image: url(../../Icon/icons/icon-heart-red.svg);
   }
 }
