@@ -87,8 +87,10 @@ export const VariantsActionsBlock: React.FC<Props> = ({
   return (
     <>
       <div className={styles.productDetails}>
-        <h3 className={styles.id}>{`ID: ${productData.name}`}</h3>
+        <h3 className={styles.id}>{`ID: ${cardProduct.id}`}</h3>
+
         <h3 className={styles.headColors}>Available colors</h3>
+
         <section className={styles.colors}>
           <div className={styles.colorOptions}>
             {colorsAvailable.map((colorKey) => {
