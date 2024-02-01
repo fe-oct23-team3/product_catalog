@@ -66,8 +66,9 @@ export const BannerSlider = () => {
           swiperRef.current = swiper;
         }}
         autoplay={{
-          delay: 4000,
+          delay: 5000,
         }}
+        speed={1000}
         loop
       >
 
@@ -83,37 +84,37 @@ export const BannerSlider = () => {
         <SwiperSlide>
           <BannerContent
             // eslint-disable-next-line max-len
-            imageMobile="https://dummyimage.com/400x400/0073ff/ffffff&text=Slide+2"
+            imageMobile="img/banners/banner-1-mob.png"
             // eslint-disable-next-line max-len
-            imageTablet="https://dummyimage.com/1040x400/0073ff/ffffff&text=Slide+2"
+            imageTablet="img/banners/banner-1-tab.png"
             // eslint-disable-next-line max-len
-            imageDesktop="https://dummyimage.com/1040x400/0073ff/ffffff&text=Slide+2"
-            link="/phones/apple-iphone-14-256gb-purple"
-            description="Slide 2"
+            imageDesktop="img/banners/banner-1-desktop.png"
+            link="/accessories"
+            description="Accessories Category"
           />
         </SwiperSlide>
         <SwiperSlide>
           <BannerContent
             // eslint-disable-next-line max-len
-            imageMobile="https://dummyimage.com/400x400/62ff00/ffffff&text=Slide+3"
+            imageMobile="img/banners/banner-2-mob.png"
             // eslint-disable-next-line max-len
-            imageTablet="https://dummyimage.com/1040x400/62ff00/ffffff&text=Slide+3"
+            imageTablet="img/banners/banner-2-tab.png"
             // eslint-disable-next-line max-len
-            imageDesktop="https://dummyimage.com/1040x400/62ff00/ffffff&text=Slide+3"
-            link="/phones/apple-iphone-14-256gb-purple"
-            description="Slide 3"
+            imageDesktop="img/banners/banner-2-desktop.png"
+            link="/phones"
+            description="Phones Category"
           />
         </SwiperSlide>
         <SwiperSlide>
           <BannerContent
             // eslint-disable-next-line max-len
-            imageMobile="https://dummyimage.com/400x400/ffaa00/0073ff&text=Slide+4"
+            imageMobile="img/banners/banner-3-mob.png"
             // eslint-disable-next-line max-len
-            imageTablet="https://dummyimage.com/1040x400/ffaa00/ffffff&text=Slide+4"
+            imageTablet="img/banners/banner-3-tab.png"
             // eslint-disable-next-line max-len
-            imageDesktop="https://dummyimage.com/1040x400/ffaa00/ffffff&text=Slide+4"
-            link="/phones/apple-iphone-14-256gb-purple"
-            description="Slide 4"
+            imageDesktop="img/banners/banner-3-desktop.png"
+            link="/tablets"
+            description="Tablets Category"
           />
         </SwiperSlide>
       </Swiper>
