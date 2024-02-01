@@ -1,6 +1,7 @@
 @import '../../../styles/';
 
 .productDetails {
+  position: relative;
   display: grid;
   grid-gap: 24px;
   margin-bottom: 56px;
@@ -10,6 +11,7 @@
   }
 
   @include onDesktop {
+    position: static;
     max-width: 320px;
     margin-bottom: 80px;
   }
@@ -22,18 +24,8 @@
 .id {
   @include typographySmallText;
   position: absolute;
+  right: 0;
   color: $icons-placeholders;
-  text-align: right;
-  padding-left: 222px;
-
-
-  @include onTablet {
-    padding-left: 222px;
-  }
-
-  @include onDesktop {
-    padding-left: 455px;
-  }
 }
 
 .headColors,
@@ -47,6 +39,7 @@
 .colors {
   border-bottom: 1px solid $elements-color;
   padding-bottom: 16px;
+  z-index: 2;
 }
 
 .capacityButton {
@@ -58,15 +51,8 @@
   margin-bottom: 8px;
   border: 1px solid $icons-placeholders;
   cursor: pointer;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
 
-  &:hover {
-    background-color: $primary-color;
-    border: 1px solid $primary-color;
-    color: $gray-white;
-  }
+  @include hover(border, 1px solid $primary-color);
 
   &.selectedCapacity {
     background-color: $primary-color;

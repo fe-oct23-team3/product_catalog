@@ -2,6 +2,7 @@
 
 .product_page {
   color: $primary-color;
+  position: relative;
 
   @include pageGrid;
   &_title {
