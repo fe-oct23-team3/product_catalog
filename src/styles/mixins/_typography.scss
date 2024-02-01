@@ -72,6 +72,17 @@
 @mixin typographySmallText {
   font-family: 'MontSemiBold';
   font-size: 12px;
-  line-height: 15px;
   letter-spacing: 0.04em;
+}
+
+@mixin typographyPrice {
+  font-family: 'MontBold';
+  font-size: 22px;
+}
+
+@mixin typographyPriceOld {
+  font-family: 'MontRegular';
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1px;
+  font-size: 22px;
 }

@@ -1,9 +1,10 @@
-import cn from 'classnames';
 import { Link } from 'react-router-dom';
 import style from './ProductCard.module.scss';
 import { Product } from '../../types/Product';
 import { useContextProvider } from '../../context/ProductsContext';
 import { scrollToTop } from '../../utils/scrollToTop';
+import { Button } from '../Button';
+import { LikeButton } from '../LikeButton/LikeButton';
 
 interface Props {
   product: Product,
@@ -94,26 +95,18 @@ export const ProductCard: React.FC<Props> = (props) => {
       </div>
 
       <div className={style.card__buttons_wrapper}>
-        <button
-          type="button"
+        <Button
+          text={isInCart ? ADDED : NOT_ADDED}
           onClick={() => toogleSelectCart(product)}
-          className={cn(style.card__button_add, {
-            [style.card__button_add_done]: isInCart,
-          })}
-        >
-          {isInCart ? ADDED : NOT_ADDED}
-        </button>
+          width={160}
+          isSelected={isInCart}
+        />
 
-        <label className={style.card__checkbox_favorite}>
-          <input
-            onChange={() => toogleSelectFavorite(product)}
-            className={cn(style.card__checkbox, {
-              [style.card__checkbox_selected]: isInFavorites,
-            })}
-            type="checkbox"
-            checked={isInFavorites}
-          />
-        </label>
+        <LikeButton
+          isSelected={isInFavorites}
+          onClick={() => toogleSelectFavorite(product)}
+          size={40}
+        />
       </div>
     </div>
   );

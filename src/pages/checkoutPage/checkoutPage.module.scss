@@ -1,5 +1,4 @@
 @import '../../styles/';
-// @import '../../styles/mixins/typography';
 
 .title {
   @include typographyH1;
@@ -9,6 +8,7 @@
   position: relative;
   display: flex;
   grid-column: span 4;
+  gap: 16px;
 
   // margin-top: 50px;
   padding: 24px;
@@ -51,27 +51,6 @@
       background-color: $elements-color;
 
       margin-top: 16px;
-    }
-  }
-
-
-
-  &Button {
-    display: flex;
-    height: 48px;
-    margin-top: 16px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-
-    background-color: $primary-color;
-    color: $gray-white;
-    cursor: pointer;
-
-    @include typographyBodyText;
-    &:disabled {
-      background-color: $elements-color;
-      cursor: not-allowed;
     }
   }
 }

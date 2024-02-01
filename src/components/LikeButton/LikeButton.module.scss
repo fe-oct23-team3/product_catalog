@@ -1,0 +1,21 @@
+@import './../../styles';
+
+.like_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1px solid $icons-placeholders;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &--selected {
+    border-color: $elements-color;
+  }
+}

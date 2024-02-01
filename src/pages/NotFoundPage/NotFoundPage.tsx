@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './NotFoundPage.module.scss';
+import { Button } from '../../components';
 
 export const NotFoundPage: React.FC = () => {
   return (
@@ -28,13 +29,12 @@ export const NotFoundPage: React.FC = () => {
                         ${styles['justify-center']}
                         ${styles['gap-3']}`}
         >
-          <button
-            type="button"
+
+          <Button
             onClick={() => window.history.back()}
-            className={`${styles.button} ${styles['button--primary']}`}
-          >
-            Go back
-          </button>
+            text="Go back"
+            width={153.59}
+          />
         </div>
       </div>
     </div>

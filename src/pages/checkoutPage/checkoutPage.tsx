@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
-import { BackLink } from '../../components';
+import { useNavigate } from 'react-router-dom';
+import { BackLink, Button } from '../../components';
 import styles from './checkoutPage.module.scss';
 
 export const CheckoutPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <BackLink link=".." />
@@ -14,12 +16,12 @@ export const CheckoutPage = () => {
             </p>
 
           </div>
-          <Link
-            className={styles.ContainerButton}
-            to="/"
-          >
-            Go shopping more!
-          </Link>
+
+          <Button
+            text="Go shopping more!"
+            onClick={() => navigate('/')}
+            width={200}
+          />
         </div>
       </div>
     </>
