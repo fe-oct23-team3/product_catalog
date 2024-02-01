@@ -1,3 +1,5 @@
+@import './styles';
+
 @font-face {
   font-family: 'MontBold';
   src: url('../public/fonts/Mont-Bold.otf');
@@ -19,4 +21,9 @@
 
 html {
   scroll-behavior: smooth;
+  color: $primary-color;
+  ::selection {
+    color: #fff;
+    background-color: $primary-color;
+  }
 }
