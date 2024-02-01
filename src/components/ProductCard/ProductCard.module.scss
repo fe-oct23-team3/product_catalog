@@ -44,22 +44,13 @@ input {
   background-color: $gray-white;
   border: 1px solid $elements-color;
   transition: transform 0.5s ease;
-  // grid-column: span 6;
-  // @include onTablet {
-  //   grid-column: span 4;
-  // }
-  // @include onDesktop {
-  //   grid-column: span 6;
-  // }
 
-  &__simple_hover {
-    &:hover {
-      border-color: rgba(0, 0, 0, 0.2);
-    }
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.2);
+  }
 
-    &:hover img {
-      transform: scale(1.1);
-    }
+  &:hover img {
+    transform: scale(1.1);
   }
 
   &__image_wrapper {
@@ -171,7 +162,7 @@ input {
       font-family: "Mont-Semibold";
       font-weight: 700;
       transition: border-radius 0.5s ease;
-      
+
       cursor: pointer;
       -moz-user-select: -moz-none;
       -o-user-select: none;
@@ -197,7 +188,7 @@ input {
       font-family: "Mont-Semibold";
       font-weight: 700;
       transition: border-radius 0.5s ease;
-      
+
       cursor: pointer;
       -moz-user-select: -moz-none;
       -o-user-select: none;

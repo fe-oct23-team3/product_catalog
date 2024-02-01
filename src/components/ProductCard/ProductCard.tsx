@@ -7,7 +7,6 @@ import { scrollToTop } from '../../utils/scrollToTop';
 
 interface Props {
   product: Product,
-  simpleHoverEffect?: boolean,
 }
 
 const ADDED = 'Added';
@@ -18,7 +17,7 @@ const containsProduct = (products: Product[], productId: number): boolean => {
 };
 
 export const ProductCard: React.FC<Props> = (props) => {
-  const { product, simpleHoverEffect = false } = props;
+  const { product } = props;
 
   const {
     id,
@@ -45,12 +44,7 @@ export const ProductCard: React.FC<Props> = (props) => {
   const isInCart = containsProduct(cartProducts, id);
 
   return (
-    <div className={cn(style.card,
-      {
-        [style.card__simple_hover]: simpleHoverEffect,
-        [style.card__default_hover]: !simpleHoverEffect,
-      })}
-    >
+    <div className={style.card}>
       <Link to={`/${category}/${itemId}`} onClick={scrollToTop}>
         <div className={style.card__image_wrapper}>
           <img
