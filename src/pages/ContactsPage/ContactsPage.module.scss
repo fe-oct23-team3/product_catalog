@@ -3,11 +3,13 @@
 .contacts {
   list-style: none;
   padding-top: 25px;
+
   &__header {
     @include typographyH2;
     margin-bottom: 25px;
-    color: $primary-color
+    color: $primary-color;
   }
+
   &__container {
     display: grid;
     row-gap: 40px;
@@ -24,23 +26,26 @@
       grid-template-columns: repeat(3, 1fr)
     }
   }
+
   &__name {
     @include typographyH4;
     color: $primary-color;
     margin-bottom: 10px
   }
+
    &__description {
     @include typographyBodyText;
     color: $secondary-color;
    }
+
   &__item {
     margin-bottom: 16px;
     width: 320px;
     display: flex;
     justify-content: space-between;
     gap: 8px;
-
   }
+
   .contacts__link {
     display: flex;
     gap: 8px;
@@ -55,6 +60,7 @@
   &__hire-us {
     display: flex;
     justify-content: center;
+
     &--message {
       @include typographyH2;
       color: $secondary-color;
