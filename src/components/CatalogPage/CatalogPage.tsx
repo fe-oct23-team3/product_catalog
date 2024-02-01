@@ -72,7 +72,7 @@ export const CatalogPage: FC<Props> = memo((props) => {
           />
           <div className={styles.catalog__container}>
             {productsCatalog.map(currentProduct => (
-              <ProductCard product={currentProduct} />
+              <ProductCard key={currentProduct.id} product={currentProduct} />
             ))}
           </div>
           {totalPages > 1 && (

@@ -15,16 +15,16 @@
 }
 
 .photosMainProductsSlider {
-    margin-right: 0px;
-    margin-bottom: 16px;
+  margin-right: 0px;
+  margin-bottom: 16px;
 
-    @include onTablet {
-      width: auto;
-    }
+  @include onTablet {
+    width: auto;
+  }
 
-    @include onDesktop {
-      width: auto;
-    }
+  @include onDesktop {
+    width: auto;
+  }
 
   .photosSwiperSlide {
     padding-top: 100%;
@@ -39,7 +39,7 @@
       transform: translate(-50%, -50%);
       max-width: 100%;
       max-height: 100%;
-    }    
+    }
   }
 }
 
@@ -53,7 +53,7 @@
 
   @include onTablet {
     grid-column-start: 1;
-    grid-column-end: 3;  
+    grid-column-end: 3;
   }
 
   @include onDesktop {
@@ -64,14 +64,18 @@
 
 .photosGaleryProducts {
   max-height: fit-content;
-  .photosGalerySlide{
+  display: grid;
+
+  .photosGalerySlide {
+    box-sizing: border-box;
+    padding: 3px;
     cursor: pointer;
     border: 1px solid #c4c4c4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px !important;
-    width: 50px !important;  
+    width: 50px !important;
 
     @include onTablet {
       max-width: 60px !important;
@@ -80,17 +84,17 @@
 
     @include onDesktop {
       height: 80px !important;
-      width: 80px !important;  
+      width: 80px !important;
     }
 
 
     &:last-child {
       padding-right: 0px;
-  
+
       @include onTablet {
         padding-right: 0px;
       }
-  
+
       @include onDesktop {
         padding-right: 0px;
       }

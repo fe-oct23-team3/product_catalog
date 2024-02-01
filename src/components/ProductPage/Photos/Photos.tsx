@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -16,6 +15,7 @@ interface Props {
 
 export const Photos: React.FC<Props> = ({ photosData }) => {
   const [activeTumb, setActiveThumb] = useState<SwiperClass | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [swiperDirection, setSwiperDirection]
     = useState<'horizontal' | 'vertical'>('horizontal');
   const [spaceB, setSpaceb] = useState<number>(8);
@@ -36,6 +36,7 @@ export const Photos: React.FC<Props> = ({ photosData }) => {
     <div className={swiperStyles.photosSwiperContainer}>
       <div className={swiperStyles.photosMainGrid}>
         <Swiper
+          onSwiper={(swiper: SwiperClass) => setActiveIndex(swiper.realIndex)}
           loop
           spaceBetween={0}
           modules={[Navigation, Thumbs]}
@@ -62,7 +63,6 @@ export const Photos: React.FC<Props> = ({ photosData }) => {
       <div className={swiperStyles.photosGaleryGrid}>
         <Swiper
           onSwiper={(swiper: SwiperClass) => setActiveThumb(swiper)}
-          loop
           direction={swiperDirection}
           spaceBetween={spaceB}
           slidesPerView={5}
@@ -70,12 +70,16 @@ export const Photos: React.FC<Props> = ({ photosData }) => {
           className={swiperStyles.photosGaleryProducts}
           data-swiper-id="swiper-2"
         >
-          {photosData.map((item) => (
+          {photosData.map((item, i) => (
             <SwiperSlide
               key={item}
               className={swiperStyles.photosGalerySlide}
+              style={activeIndex === i ? { border: '1px solid #313237' } : {}}
+              onClick={() => setActiveIndex(i)}
             >
-              <div className={swiperStyles.photosGaleryProductsWrapper}>
+              <div
+                className={swiperStyles.photosGaleryProductsWrapper}
+              >
                 <img
                   src={item}
                   alt={`Slider - ${item}`}

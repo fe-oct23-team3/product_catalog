@@ -1,6 +1,4 @@
-import {
-  CatalogPage,
-} from '../../components/CatalogPage/CatalogPage';
+import { CatalogPage } from '../../components/CatalogPage/CatalogPage';
 
 const pageHeader = 'Accessories';
 
