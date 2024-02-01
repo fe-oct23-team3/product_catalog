@@ -1,14 +1,20 @@
 @import '../../styles';
 .rights {
   padding-top: 25px;
-  max-width: 640px;
+  display: grid;
+  justify-items: start;
+  justify-content: center;
+  text-align: justify;
+
   &__label {
     @include typographyBodyText;
-    color: $primary-color
+    color: $primary-color;
+    margin-bottom: 5px;
+    max-width: 640px;
   }
   &__rules {
     @include typographyBodyText;
     color: $secondary-color;
-    text-align: justify;
+    max-width: 640px;
   }
 }
