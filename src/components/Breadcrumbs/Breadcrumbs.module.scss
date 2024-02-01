@@ -36,10 +36,7 @@
     line-height: 12px;
     margin-top: 3px;
     @include typographySmallText;
-
-    &:hover {
-      color: $primary-color;
-    }
+    @include hover(color, $primary-color);
   }
 }
 
