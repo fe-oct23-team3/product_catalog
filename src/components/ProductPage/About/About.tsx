@@ -1,14 +1,12 @@
-import { ProductDetails } from '../../../../types/Product';
-import styles from '../../productPage.module.scss';
+import { ProductDetails } from '../../../types/Product';
+import styles from '../../../pages/productPage/productPage.module.scss';
 
 interface Props {
   productData: ProductDetails;
 }
 
 export const About: React.FC<Props> = ({ productData }) => {
-  const {
-    description,
-  } = productData;
+  const { description } = productData;
 
   return (
     <div className={`${styles.mw} ${styles.about}`}>
@@ -23,7 +21,6 @@ export const About: React.FC<Props> = ({ productData }) => {
               <div key={paragraph}>{paragraph}</div>
             ))}
           </article>
-
         </section>
       ))}
     </div>

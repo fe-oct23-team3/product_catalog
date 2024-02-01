@@ -1,10 +1,12 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { About } from './components/About';
-import { Photos } from './components/Photos';
-import { TechSpecs } from './components/TechSpecs';
-import { VariantsActionsBlock } from './components/VariantsActionsBlock';
+import { About } from '../../components/ProductPage/About';
+import { Photos } from '../../components/ProductPage/Photos';
+import { TechSpecs } from '../../components/ProductPage/TechSpecs';
+import {
+  VariantsActionsBlock,
+} from '../../components/ProductPage/VariantsActionsBlock';
 import styles from './productPage.module.scss';
 import { getProduct, getRecommendedProducts } from '../../api/products';
 import { DataFromServer, Product, ProductDetails } from '../../types/Product';
@@ -36,8 +38,9 @@ export const ProductPage = () => {
         }
 
         const allProducts = await getAllProducts();
-        const foundProduct = allProducts?.rows
-          .find((item) => item.itemId === productId);
+        const foundProduct = allProducts?.rows.find(
+          (item) => item.itemId === productId,
+        );
 
         if (foundProduct) {
           setCardProduct(foundProduct);
@@ -50,10 +53,10 @@ export const ProductPage = () => {
 
     if (productId) {
       getRecommendedProducts(productId)
-        .then((data => {
+        .then((data) => {
           setRecommended(data.rows);
-        }))
-        .catch(() => { })
+        })
+        .catch(() => {})
         .finally(() => setAreRecommendedLoading(false));
     }
 
@@ -63,7 +66,9 @@ export const ProductPage = () => {
   if (productData && cardProduct) {
     return (
       <div className={styles.product_page}>
-        <div className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}>
+        <div
+          className={`${styles.fw} ${styles.product_page__current_location_wrapper}`}
+        >
           <label htmlFor="home_link">
             <Link
               id="home_link"
@@ -73,10 +78,7 @@ export const ProductPage = () => {
             />
           </label>
           <div className={styles.product_page__icon_right_arrow} />
-          <Link
-            id="home_link"
-            to={`/${cardProduct?.category}`}
-          >
+          <Link id="home_link" to={`/${cardProduct?.category}`}>
             <p className={styles.product_page__location_page_name}>
               {`${cardProduct?.category}`}
             </p>
@@ -94,11 +96,7 @@ export const ProductPage = () => {
         </h1>
 
         <div className={`${styles.hw_l} ${styles.photosContainer}`}>
-          {productData && (
-            <Photos
-              photosData={productData?.images}
-            />
-          )}
+          {productData && <Photos photosData={productData?.images} />}
         </div>
 
         <div className={`${styles.hw_r}`}>
@@ -133,11 +131,7 @@ export const ProductPage = () => {
       </h1>
 
       <div className={`${styles.hw_l} ${styles.photosContainer}`}>
-        {productData && (
-          <Photos
-            photosData={productData?.images}
-          />
-        )}
+        {productData && <Photos photosData={productData?.images} />}
       </div>
 
       <div className={`${styles.hw_r}`}>

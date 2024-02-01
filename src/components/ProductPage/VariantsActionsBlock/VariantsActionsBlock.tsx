@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './VariantsActionsBlock.module.scss';
-import { Button } from '../../../../components/Button';
-import { Product, ProductDetails } from '../../../../types/Product';
-import { useContextProvider } from '../../../../context/ProductsContext';
+import { Button } from '../../Button';
+import { Product, ProductDetails } from '../../../types/Product';
+import { useContextProvider } from '../../../context/ProductsContext';
 import { allColors } from './allColors';
 
 interface Props {
@@ -16,10 +16,9 @@ interface Props {
 const ADDED = 'Added';
 const NOT_ADDED = 'Add to cart';
 
-const containsProduct
-  = (products: Product[], productId: string): boolean => {
-    return products.some((product) => product.itemId === productId);
-  };
+const containsProduct = (products: Product[], productId: string): boolean => {
+  return products.some((product) => product.itemId === productId);
+};
 
 export const VariantsActionsBlock: React.FC<Props> = ({
   productData,
@@ -75,10 +74,10 @@ export const VariantsActionsBlock: React.FC<Props> = ({
     cartProducts,
   } = useContextProvider();
 
-  const isInFavorites = cardProduct
-    && containsProduct(favourites, cardProduct.itemId);
-  const isInCart = cardProduct
-    && containsProduct(cartProducts, cardProduct.itemId);
+  const isInFavorites
+    = cardProduct && containsProduct(favourites, cardProduct.itemId);
+  const isInCart
+    = cardProduct && containsProduct(cartProducts, cardProduct.itemId);
 
   if (!cardProduct) {
     return <div>No product available</div>;
@@ -94,9 +93,7 @@ export const VariantsActionsBlock: React.FC<Props> = ({
             {colorsAvailable.map((colorKey) => {
               const isColorValid = colorKey in allColors;
 
-              const buttonColor = isColorValid
-                ? allColors[colorKey]
-                : '#fff';
+              const buttonColor = isColorValid ? allColors[colorKey] : '#fff';
 
               return (
                 <button
@@ -139,12 +136,13 @@ export const VariantsActionsBlock: React.FC<Props> = ({
         <div>
           <div className={styles.price}>
             <span className={styles.salePrice}>
-              $
-              {productData.priceDiscount}
+              {`$${productData.priceDiscount}`}
             </span>
-            <span className={styles.originalPrice} data-text={`$${productData.priceRegular}`}>
-              $
-              {productData.priceRegular}
+            <span
+              className={styles.originalPrice}
+              data-text={`$${productData.priceRegular}`}
+            >
+              {`$${productData.priceRegular}`}
             </span>
           </div>
 
