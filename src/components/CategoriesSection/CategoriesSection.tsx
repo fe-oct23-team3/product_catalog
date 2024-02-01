@@ -42,7 +42,9 @@ export const CategoriesSection: React.FC = () => {
             className={`${styles.product}`}
           >
             <NavLink to="/phones">
-              <div
+              <img
+                src="img/category-phones.png"
+                alt="phones category"
                 className={`${styles.product__photo} ${styles.product__photo__phones}`}
               />
               <h3 className={styles.product__title}>Mobile phones</h3>
@@ -56,7 +58,9 @@ export const CategoriesSection: React.FC = () => {
             className={`${styles.product}`}
           >
             <NavLink to="/tablets">
-              <div
+              <img
+                src="img/category-tablets.png"
+                alt="phones category"
                 className={`${styles.product__photo} ${styles.product__photo__tablets}`}
               />
               <h3 className={styles.product__title}>Tablets</h3>
@@ -68,7 +72,9 @@ export const CategoriesSection: React.FC = () => {
             className={`${styles.product}`}
           >
             <NavLink to="/accessories">
-              <div
+              <img
+                src="img/category-accessories.png"
+                alt="phones category"
                 className={`${styles.product__photo} ${styles.product__photo__accessories}`}
               />
               <h3 className={styles.product__title}>Accessories</h3>
