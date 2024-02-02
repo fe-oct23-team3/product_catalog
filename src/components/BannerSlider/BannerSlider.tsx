@@ -77,7 +77,7 @@ export const BannerSlider = () => {
             imageMobile="img/banners/banner-mobile.jpg"
             imageTablet="img/banners/banner-desktop.jpg"
             imageDesktop="img/banners/banner-desktop.jpg"
-            link="/phones/apple-iphone-14-256gb-purple"
+            link="/phones/apple-iphone-14-pro-256gb-spaceblack"
             description="New iPhone 14 Pro"
           />
         </SwiperSlide>

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import styles from './CategoriesSection.module.scss';
 import { getAllProducts } from '../../api/products';
+import { scrollToTop } from '../../utils/scrollToTop';
 
 export const CategoriesSection: React.FC = () => {
   const [phonesLength, setPhonesLength] = useState(0);
@@ -41,7 +42,7 @@ export const CategoriesSection: React.FC = () => {
           <article
             className={`${styles.product}`}
           >
-            <NavLink to="/phones">
+            <NavLink to="/phones" onClick={() => scrollToTop()}>
               <img
                 src="img/category-phones.png"
                 alt="phones category"
@@ -57,7 +58,7 @@ export const CategoriesSection: React.FC = () => {
           <article
             className={`${styles.product}`}
           >
-            <NavLink to="/tablets">
+            <NavLink to="/tablets" onClick={() => scrollToTop()}>
               <img
                 src="img/category-tablets.png"
                 alt="phones category"
@@ -71,7 +72,7 @@ export const CategoriesSection: React.FC = () => {
           <article
             className={`${styles.product}`}
           >
-            <NavLink to="/accessories">
+            <NavLink to="/accessories" onClick={() => scrollToTop()}>
               <img
                 src="img/category-accessories.png"
                 alt="phones category"

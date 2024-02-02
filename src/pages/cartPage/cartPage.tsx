@@ -7,7 +7,11 @@ import { CartItem, BackLink, Button } from '../../components';
 import { ProductsContext } from '../../context/ProductsContext';
 
 export const CartPage: React.FC = () => {
-  const { cartProducts, removeCartProduct } = useContext(ProductsContext);
+  const {
+    cartProducts,
+    removeCartProduct,
+    setCartProducts,
+  } = useContext(ProductsContext);
 
   const productsWithQuantity = cartProducts.map(product => ({
     ...product,
@@ -63,6 +67,7 @@ export const CartPage: React.FC = () => {
       setTimeout(() => {
         setIsCheckoutLoading(false);
         navigate('/checkout');
+        setCartProducts([]);
       }, 1000);
     }
   };

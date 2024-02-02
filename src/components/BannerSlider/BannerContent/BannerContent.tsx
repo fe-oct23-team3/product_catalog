@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './BannerContent.module.scss';
 import { Device } from '../../../types/Device';
+import { scrollToTop } from '../../../utils/scrollToTop';
 
 interface Props {
   imageMobile: string,
@@ -47,6 +48,7 @@ export const BannerContent: React.FC<Props> = ({
     <Link
       to={link}
       className={styles.image_container}
+      onClick={() => scrollToTop()}
     >
       <img
         className={styles.image}
