@@ -16,6 +16,8 @@ Welcome to Nice Gadgets, a full-stack project for an online store featuring a va
 - JavaScript
 - TypeScript
 - React.js
+- React Router
+- React Select
 - HTML
 - CSS
 - SCSS
